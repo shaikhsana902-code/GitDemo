@@ -60,6 +60,8 @@ public class MyOrder {
 		driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.id("login-button")).click();
+		System.out.println("Pushed to git");
+		driver.close();
 		
 	}
 

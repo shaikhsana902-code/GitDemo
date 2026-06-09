@@ -21,13 +21,13 @@ public class LoginPage {
 	@FindBy(id = "login-button")
 	WebElement login;
 
-	public cataloguePage LoginApp() {
+	public InventoryPage LoginApp() {
 		email.sendKeys("standard_user");
 		pass.sendKeys("secret_sauce");
 		login.click();
 		
-		cataloguePage CT = new cataloguePage(driver);
-		return CT;
+		InventoryPage IT = new InventoryPage(driver);
+		return IT;
 
 	}
 	public void goTo()

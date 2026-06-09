@@ -1,5 +1,6 @@
 package MyProject.SauceDemo.test;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,7 @@ import MyProject.SauceDemo.cartPage;
 import MyProject.SauceDemo.checkOutPage;
 
 public class MyOrder extends BaseTest {
-	
+
 	String MyProduct = "Sauce Labs Bolt T-Shirt";
 	String ExtraProduct = "Sauce Labs Onesie";
 
@@ -34,19 +35,17 @@ public class MyOrder extends BaseTest {
 		cPage.finishOrder();
 		Assert.assertEquals(cPage.getConfirmationMessage(), "Thank you for your order!");
 
-		/*
-		 * driver.get("https://www.saucedemo.com/");
-		 * driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
-		 * driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		 * driver.findElement(By.id("login-button")).click(); String ErrorMassage =
-		 * driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
-		 * Assert.assertEquals(ErrorMassage,
-		 * "Epic sadface: Sorry, this user has been locked out.");
-		 */
+		driver.get("https://www.saucedemo.com/");
+		driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
+		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+		driver.findElement(By.id("login-button")).click();
+		String ErrorMassage = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+		Assert.assertEquals(ErrorMassage, "Epic sadface: Sorry, this user has been locked out.");
 
 	}
 
 }
+
 
 /*
  * WebDriverManager.chromedriver().setup(); WebDriver driver = new
